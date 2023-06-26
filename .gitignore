@@ -1,3 +1,5 @@
+
+
 # Created by https://www.toptal.com/developers/gitignore/api/intellij,java,gradle
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij,java,gradle
 
@@ -168,4 +170,6 @@ gradle-app.setting
 # Java heap dump
 *.hprof
 
+# security-aws
+application-aws.properties
 # End of https://www.toptal.com/developers/gitignore/api/intellij,java,gradle
