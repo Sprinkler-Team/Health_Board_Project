@@ -1,7 +1,7 @@
 package com.sprinkler.healthboard.comment;
 
-import com.sprinkler.healthboard.basetime.BaseTimeEntity;
 import com.sprinkler.healthboard.member.Member;
+import com.sprinkler.healthboard.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,12 +21,12 @@ public class Comment {
     private Long comment_id;
 
     @Column(name = "posts_id")
-    @ManyToOne(targetEntity = Posts.class)
+    @ManyToOne
     @JoinColumn(name = "posts_id")
     private Posts posts;
 
     @Column(name = "member_id")
-    @ManyToOne(targetEntity = Member.class)
+    @ManyToOne
     @JoinColumn(name = "member_id")
     private Member member;
 
