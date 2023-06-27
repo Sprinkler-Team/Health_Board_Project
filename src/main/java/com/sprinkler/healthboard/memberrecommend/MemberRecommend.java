@@ -1,6 +1,7 @@
 package com.sprinkler.healthboard.memberrecommend;
 
 import com.sprinkler.healthboard.member.Member;
+import com.sprinkler.healthboard.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,7 +35,7 @@ public class MemberRecommend {
 
     //빌더
     @Builder
-    public Comment(Posts posts, Member member, boolean is_like) {
+    public MemberRecommend(Posts posts, Member member, boolean is_like) {
         this.posts = posts;
         this.member = member;
         this.is_like = is_like;
