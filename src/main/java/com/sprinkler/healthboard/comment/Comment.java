@@ -12,7 +12,7 @@ import java.util.Date;
 @Entity
 @Getter
 @NoArgsConstructor
-@Table(name = "Comment")
+@Table(name = "comment")
 public class Comment {
     //필드
     @Id

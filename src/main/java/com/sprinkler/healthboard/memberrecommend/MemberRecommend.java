@@ -11,7 +11,7 @@ import java.util.Date;
 @Entity
 @Getter
 @NoArgsConstructor
-@Table(name = "MemberRecommend")
+@Table(name = "memberrecommend")
 public class MemberRecommend {
     //필드
     @Id
