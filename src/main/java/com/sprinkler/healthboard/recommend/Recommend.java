@@ -34,5 +34,4 @@ public class Recommend {
         this.hate_cnt=hate_cnt;
     }
 
-
 }

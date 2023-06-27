@@ -1,17 +1,19 @@
 package com.sprinkler.healthboard.posts;
 
 
+import com.sprinkler.healthboard.member.Member;
 import com.sprinkler.healthboard.recommend.Recommend;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 
 
 //엔터티란? -> DB에 쓰일 필드와 여러 엔터티간의 관계를 정의
 //필드라는 것은 엔터티의 각 columnn
 @Entity     //이 클래스가 엔터티임을 알려줌
-//@Builder    //해당 클래스에 해당하는 엔터티 객체를 만들 때 빌더 패턴을 이용하여 만들수 있도록 하는 어노테이션 -> 나중에 다른곳에서  Board.builder(). {여러가지 필드의 초기값 선언 }. build() 형태로 객체를 만들 수 있음
+//@Builder  //해당 클래스에 해당하는 엔터티 객체를 만들 때 빌더 패턴을 이용하여 만들수 있도록 하는 어노테이션 -> 나중에 다른곳에서  Board.builder(). {여러가지 필드의 초기값 선언 }. build() 형태로 객체를 만들 수 있음
 //@AllArgsConstructor //모든 필드를 파라미터로 포함하는 생성자 자동생성    -> 매우 비권장됨(클래스에 존재하는 모든 필드에 대한 생성자를 자동으로 생성하는데, 인스턴스 멤버의 선언 순서에 영향을 받기 때문에 변수의 순서를 바꾸면 생성자의 입력 값 순서도 바뀌게 되어 검출되지 않는 치명적인 오류를 발생시킬 수 있음)
 //따라서 NoArgsConstructor를 사용하면서 옵션으로 (access = AccessLevel.PROTECTED)를 준다
 //추가로 이렇게만 하면 Builder에 오류가 생기므로 생성자에 @Builder 적용
@@ -36,6 +38,13 @@ public class Posts {
 
     @Column
     private float location;
+
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+    @OneToMany(mappedBy = "posts")
+    List<Comment> comments = new ArrayList<>();
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "recommend_id")
