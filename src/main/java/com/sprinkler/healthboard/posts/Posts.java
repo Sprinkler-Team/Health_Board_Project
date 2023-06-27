@@ -1,6 +1,7 @@
 package com.sprinkler.healthboard.posts;
 
 
+import com.sprinkler.healthboard.comment.Comment;
 import com.sprinkler.healthboard.member.Member;
 import com.sprinkler.healthboard.recommend.Recommend;
 import lombok.*;
@@ -8,6 +9,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 //엔터티란? -> DB에 쓰일 필드와 여러 엔터티간의 관계를 정의
