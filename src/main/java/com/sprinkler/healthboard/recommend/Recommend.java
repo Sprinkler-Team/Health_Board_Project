@@ -28,6 +28,7 @@ public class Recommend {
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "recommend")
     private Posts posts;
 
+
     @Builder
     public Recommend(int like_cnt, int hate_cnt){
         this.like_cnt=like_cnt;

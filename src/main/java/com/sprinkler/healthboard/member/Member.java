@@ -3,6 +3,7 @@ package com.sprinkler.healthboard.member;
 
 import com.sprinkler.healthboard.comment.Comment;
 import com.sprinkler.healthboard.memberrecommend.MemberRecommend;
+import com.sprinkler.healthboard.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -49,6 +50,9 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<MemberRecommend> memberRecommends = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    private List<Posts> posts = new ArrayList<>();
 
     //빌더
     /*

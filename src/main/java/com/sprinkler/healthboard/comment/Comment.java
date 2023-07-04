@@ -20,12 +20,11 @@ public class Comment {
     @Column(name = "comment_id")
     private Long comment_id;
 
-    @Column(name = "posts_id")
+
     @ManyToOne
     @JoinColumn(name = "posts_id")
     private Posts posts;
 
-    @Column(name = "member_id")
     @ManyToOne
     @JoinColumn(name = "member_id")
     private Member member;

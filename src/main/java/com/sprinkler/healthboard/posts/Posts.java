@@ -3,6 +3,7 @@ package com.sprinkler.healthboard.posts;
 
 import com.sprinkler.healthboard.comment.Comment;
 import com.sprinkler.healthboard.member.Member;
+import com.sprinkler.healthboard.memberrecommend.MemberRecommend;
 import com.sprinkler.healthboard.recommend.Recommend;
 import lombok.*;
 
@@ -47,6 +48,9 @@ public class Posts {
 
     @OneToMany(mappedBy = "posts")
     List<Comment> comments = new ArrayList<>();
+
+    @OneToMany(mappedBy="posts")
+    List<MemberRecommend> memberRecommends = new ArrayList<>();
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "recommend_id")

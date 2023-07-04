@@ -20,12 +20,10 @@ public class MemberRecommend {
     @Column(name = "member_recommend_id")
     private Long member_recommend_id;
 
-    @Column(name = "posts_id")
     @ManyToOne
     @JoinColumn(name = "posts_id")
     private Posts posts;
 
-    @Column(name = "member_id")
     @ManyToOne
     @JoinColumn(name = "member_id")
     private Member member;
