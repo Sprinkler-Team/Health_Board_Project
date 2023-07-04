@@ -20,9 +20,6 @@ public class MemberRecommend {
     @Column(name = "member_recommend_id")
     private Long member_recommend_id;
 
-    @ManyToOne
-    @JoinColumn(name = "posts_id")
-    private Posts posts;
 
     @ManyToOne
     @JoinColumn(name = "member_id")
@@ -31,10 +28,12 @@ public class MemberRecommend {
     @Column(nullable = false)
     private boolean is_like;
 
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "memberRecommend") //카밀 케이스 사용!
+    private Posts posts;
+
     //빌더
     @Builder
-    public MemberRecommend(Posts posts, Member member, boolean is_like) {
-        this.posts = posts;
+    public MemberRecommend(Member member, boolean is_like) {
         this.member = member;
         this.is_like = is_like;
     }

@@ -49,8 +49,9 @@ public class Posts {
     @OneToMany(mappedBy = "posts")
     List<Comment> comments = new ArrayList<>();
 
-    @OneToMany(mappedBy="posts")
-    List<MemberRecommend> memberRecommends = new ArrayList<>();
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_recommend_id")
+    private MemberRecommend memberRecommend;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "recommend_id")
